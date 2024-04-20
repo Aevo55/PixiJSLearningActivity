@@ -1,8 +1,17 @@
 body{
-     background-color: #e8ec00;
+     background-color: #dfe21ead;
      display: flex;
      flex-direction: column;
      align-items: center;
-     padding: 0px;
+     padding: 40px;
      margin: 0px;
+}
+
+.pixiContainer {
+     margin-top: 20px
+}
+
+img {    
+     object-fit: contain;
+     width: 900px;
 }

@@ -1,6 +1,6 @@
-export async function loadImg(){
-     let tex = await PIXI.Assets.load("img/ant.png")
-     let obj = new PIXI.Spite(tex)
+export async function loadCorrectText(path){
+     let tex = await PIXI.Assets.load(path)
+     let obj = new PIXI.Sprite(tex)
      obj.scale.set(0.1)
      obj.pivot.set(0.5,0.5)
      obj.x = 100
@@ -8,9 +8,9 @@ export async function loadImg(){
      return obj
 }
 
-export async function loadSound(){
-     PIXI.Assets.add({alias: 'sound', src:"sounds/antSound.mp3"})
-     return PIXI.Assets.load('sound')
+export async function loadSound(soundName){
+     PIXI.Assets.add({alias: soundName, src:"sound/" + soundName + ".wav"})
+     return PIXI.Assets.load(soundName)
 }
 
 const startBtnTextStyle = new PIXI.TextStyle({
@@ -26,12 +26,12 @@ export function createStartButton(){
      let startButton = new PIXI.Container()
 
      let background = new PIXI.Graphics()
-     background.roundRect(-100,-25, 200, 50, 10)
+     background.roundRect(-150,-25, 300, 50, 10)
      background.fill(0xFFFFFF)
      background.stroke({width: 3, color: 0x000000})
 
      let progress = new PIXI.Graphics();
-     progress.roundRect(-100,-25, 0, 50, 10)
+     progress.roundRect(-150,-25, 0, 50, 10)
      progress.fill(0xe0db36)
 
 
@@ -44,7 +44,7 @@ export function createStartButton(){
      startButton.addChild(progress)
      startButton.addChild(txt)
      startButton.x = 400
-     startButton.y = 400
+     startButton.y = 350
 
      return startButton
 }
