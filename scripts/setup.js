@@ -150,7 +150,7 @@ export function createRestartButton(){
 
      let background = new PIXI.Graphics()
      background.roundRect(-150,-25, 300, 50, 10)
-     background.fill(0xFFFFFF)
+     background.fill(0xe0db36)
      background.stroke({width: 3, color: 0x000000})
 
      let txt = new PIXI.Text({text: "RESTART", style: buttonTextStyle})
@@ -162,6 +162,6 @@ export function createRestartButton(){
      button.addChild(txt)
      button.x = 400
      button.y = 250
-     
+
      return button
 }
